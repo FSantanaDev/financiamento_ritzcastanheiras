@@ -725,11 +725,11 @@ footer {
     }
     
     .hero-text {
-        order: 2;
+        order: 1; /* Texto aparece primeiro */
     }
 
     .simulator-card {
-        order: 1;
+        order: 2; /* Simulador aparece depois */
         width: 100%;
         max-width: 400px;
     }
