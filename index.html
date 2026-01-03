@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crédito Imobiliário - Ritz Castanheiras</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">Crédito Imobiliário</a>
+            <ul class="nav-links">
+                <li><a href="#simulador">Simulador</a></li>
+                <li><a href="#pessoais">Documentos</a></li>
+                <li><a href="#renda">Renda</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-slideshow">
+            <div class="slide active" style="background-image: url('96_INT07_SPA-PISCINA-V1_HR-1-4.png');"></div>
+            <div class="slide" style="background-image: url('Artboard-8-2-1.jpg');"></div>
+            <div class="slide" style="background-image: url('Artboard-9-2.jpg');"></div>
+            <div class="slide" style="background-image: url('Artboard-10-2.jpg');"></div>
+            <div class="slide" style="background-image: url('Prancheta-4.jpg');"></div>
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h1>Construa seu sonho no Ritz Castanheiras</h1>
+                <p>Já tem o lote? Garanta o crédito ideal para a <strong>construção da sua casa</strong> no condomínio mais exclusivo de Manaus.</p>
+            </div>
+            
+            <div class="simulator-card" id="simulador">
+                <h3><i class="fas fa-money-check-alt"></i> Simule o seu Financiamento</h3>
+                <form id="simulator-form">
+                    <div class="form-group">
+                        <label for="valor-imovel">Valor Estimado da Obra (R$)</label>
+                        <input type="text" id="valor-imovel" placeholder="Ex: 600.000,00" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="valor-entrada">Recursos Próprios (Entrada) (R$)</label>
+                        <input type="text" id="valor-entrada" placeholder="Ex: 120.000,00" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="prazo-anos">Prazo (Anos)</label>
+                        <select id="prazo-anos" required>
+                            <option value="10">10 anos (120 meses)</option>
+                            <option value="15">15 anos (180 meses)</option>
+                            <option value="20">20 anos (240 meses)</option>
+                            <option value="25">25 anos (300 meses)</option>
+                            <option value="30">30 anos (360 meses)</option>
+                            <option value="35" selected>35 anos (420 meses)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="sistema-amortizacao">Sistema de Amortização <i class="fas fa-info-circle tooltip-icon" title="SAC: Parcelas decrescentes. Price: Parcelas fixas."></i></label>
+                        <select id="sistema-amortizacao" required>
+                            <option value="sac" selected>Tabela SAC (Parcelas Decrescentes)</option>
+                            <option value="price">Tabela Price (Parcelas Fixas)</option>
+                        </select>
+                        <small class="info-text" id="info-sac">SAC: Começa maior e diminui ao longo do tempo. Juros menores no final.</small>
+                        <small class="info-text hidden" id="info-price">Price: Parcelas iguais do início ao fim. Ideal para planejar o orçamento mensal.</small>
+                    </div>
+
+                    <button type="submit" class="sim-button">Calcular Parcelas</button>
+                </form>
+
+                <div id="result-box" class="result-box hidden">
+                    <h4>Resultado da Simulação</h4>
+                    <div class="result-row">
+                        <span>Valor Financiado:</span>
+                        <strong id="res-financiado">R$ 0,00</strong>
+                    </div>
+                    <div class="result-row">
+                        <span>1ª Parcela (Estimada):</span>
+                        <strong id="res-primeira" class="highlight">R$ 0,00</strong>
+                    </div>
+                    <div class="result-row">
+                        <span>Última Parcela (Estimada):</span>
+                        <strong id="res-ultima">R$ 0,00</strong>
+                    </div>
+                    <p class="disclaimer">*Simulação baseada na Tabela SAC com juros de 10.5% a.a. Valores aproximados sujeitos a análise de crédito.</p>
+                    <a href="#" id="whatsapp-sim-btn" class="whatsapp-sim-btn" target="_blank">
+                        <i class="fab fa-whatsapp"></i> Enviar Simulação
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="steps-section">
+        <div class="container">
+            <h2>Passo a Passo da Sua Construção</h2>
+            <div class="steps-grid">
+                <div class="step-card" style="background-image: url('construction-planning.jpg');">
+                    <div class="step-overlay">
+                        <div class="step-icon"><i class="fas fa-drafting-compass"></i></div>
+                        <h3>1. Projeto e Orçamento</h3>
+                        <p>Com o lote garantido, defina o projeto arquitetônico e o orçamento detalhado da sua obra.</p>
+                    </div>
+                </div>
+                <div class="step-card" style="background-image: url('approved-credit.jpg');">
+                    <div class="step-overlay">
+                        <div class="step-icon"><i class="fas fa-file-invoice-dollar"></i></div>
+                        <h3>2. Aprovação do Crédito</h3>
+                        <p>Analisamos seu perfil para aprovar o financiamento de até 80% do custo da construção.</p>
+                    </div>
+                </div>
+                <div class="step-card" style="background-image: url('construction-progress.jpg');">
+                    <div class="step-overlay">
+                        <div class="step-icon"><i class="fas fa-hard-hat"></i></div>
+                        <h3>3. Liberação Mensal</h3>
+                        <p>Você recebe os recursos mês a mês, conforme o avanço físico da obra (medição).</p>
+                    </div>
+                </div>
+                <div class="step-card" style="background-image: url('house-keys.jpg');">
+                    <div class="step-overlay">
+                        <div class="step-icon"><i class="fas fa-home"></i></div>
+                        <h3>4. Obra Concluída</h3>
+                        <p>Ao finalizar, a construção é averbada e você muda para sua casa nova!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="container">
+        
+        <section class="intro">
+            <h2>Documentação Necessária</h2>
+            <p>Após aprovar sua simulação, organize os documentos abaixo para agilizar o processo.</p>
+            <div class="send-docs-actions">
+                <a href="#" class="btn-send-docs whatsapp"><i class="fab fa-whatsapp"></i> Enviar por WhatsApp</a>
+                <a href="mailto:contato@creditoimobiliario.com.br" class="btn-send-docs email"><i class="fas fa-envelope"></i> Enviar por E-mail</a>
+            </div>
+        </section>
+
+        <div class="grid-container">
+            <!-- Documentos Pessoais -->
+            <div class="card" id="pessoais">
+                <div class="card-header">
+                    <i class="fas fa-user-friends"></i>
+                    <h3>Documentos Pessoais</h3>
+                    <span>(Proponente e Cônjuge)</span>
+                </div>
+                <ul class="list">
+                    <li><i class="fas fa-check"></i> RG ou CNH</li>
+                    <li><i class="fas fa-check"></i> CPF</li>
+                    <li><i class="fas fa-check"></i> Certidão de nascimento ou casamento</li>
+                    <li><i class="fas fa-check"></i> Comprovante de endereço atualizado</li>
+                    <li><i class="fas fa-check"></i> Comprovante de renda (ver abaixo)</li>
+                </ul>
+            </div>
+
+            <!-- Renda -->
+            <div class="card" id="renda">
+                <div class="card-header">
+                    <i class="fas fa-money-bill-wave"></i>
+                    <h3>Comprovação de Renda</h3>
+                </div>
+                <div class="sub-category">
+                    <h4>Assalariado</h4>
+                    <ul class="list">
+                        <li>3 últimos contracheques</li>
+                        <li>Carteira de trabalho</li>
+                    </ul>
+                </div>
+                <div class="sub-category">
+                    <h4>Autônomo</h4>
+                    <ul class="list">
+                        <li>Imposto de Renda (IR)</li>
+                        <li>Extratos bancários (6 meses)</li>
+                        <li>DECORE (se tiver)</li>
+                    </ul>
+                </div>
+                <div class="sub-category">
+                    <h4>Empresário</h4>
+                    <ul class="list">
+                        <li>Imposto de Renda (IR)</li>
+                        <li>Contrato Social</li>
+                        <li>Extratos bancários (6 meses)</li>
+                    </ul>
+                </div>
+                <div class="sub-category">
+                    <h4>Aposentado</h4>
+                    <ul class="list">
+                        <li>Extrato do benefício</li>
+                        <li>Contracheques</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Terreno -->
+            <div class="card" id="terreno">
+                <div class="card-header">
+                    <i class="fas fa-map-marked-alt"></i>
+                    <h3>Terreno</h3>
+                </div>
+                <ul class="list">
+                    <li><i class="fas fa-check"></i> Matrícula atualizada (até 30 dias)</li>
+                    <li><i class="fas fa-check"></i> Certidão de ônus reais</li>
+                    <li><i class="fas fa-check"></i> IPTU / Certidão negativa municipal</li>
+                    <li><i class="fas fa-check"></i> Documentos de compra (se houver)</li>
+                </ul>
+                <div class="alert-box" id="terreno-financiado-box">
+                    <h4><i class="fas fa-info-circle"></i> Se o terreno for financiado</h4>
+                    <ul>
+                        <li>Contrato do financiamento</li>
+                        <li>Saldo devedor atualizado</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Construção -->
+            <div class="card" id="construcao">
+                <div class="card-header">
+                    <i class="fas fa-hard-hat"></i>
+                    <h3>Construção</h3>
+                </div>
+                <ul class="list">
+                    <li><i class="fas fa-check"></i> Projeto arquitetônico aprovado</li>
+                    <li><i class="fas fa-check"></i> Alvará de construção</li>
+                    <li><i class="fas fa-check"></i> ART / RRT</li>
+                    <li><i class="fas fa-check"></i> Memorial descritivo</li>
+                    <li><i class="fas fa-check"></i> Cronograma físico-financeiro (modelo Caixa)</li>
+                    <li><i class="fas fa-check"></i> Orçamento detalhado da obra</li>
+                </ul>
+            </div>
+
+            <!-- Complementares / FGTS -->
+            <div class="card" id="complementares">
+                <div class="card-header">
+                    <i class="fas fa-file-invoice-dollar"></i>
+                    <h3>Complementares / FGTS</h3>
+                </div>
+                <ul class="list">
+                    <li><i class="fas fa-check"></i> IR completo + recibo</li>
+                    <li><i class="fas fa-check"></i> Extrato do FGTS (se usar)</li>
+                    <li><i class="fas fa-check"></i> Autorização para consulta e débito</li>
+                </ul>
+            </div>
+        </div>
+
+    </main>
+
+    <a href="#" id="whatsapp-btn" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+        <span>Fale Conosco</span>
+    </a>
+
+    <footer id="contato">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Atendimento</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Av. Djalma Batista, 1000 - Chapada, Manaus - AM</p>
+                    <p><i class="fas fa-envelope"></i> contato@creditoimobiliario.com.br</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Fale Conosco</h3>
+                    <p><i class="fas fa-phone-alt"></i> (92) XXXX-XXXX</p>
+                    <p><i class="fab fa-whatsapp"></i> (92) 9499-7154</p>
+                    <p>Segunda a Sexta: 9h às 18h</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Redes Sociais</h3>
+                    <div class="social-links">
+                        <a href="https://facebook.com" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://instagram.com" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://linkedin.com" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://twitter.com" target="_blank" title="X (Twitter)"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Alan Kardek Crédito Imobiliário. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
